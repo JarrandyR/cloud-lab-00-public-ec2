@@ -653,6 +653,16 @@ In real life, the instance would be rebuilt.
 
 <img width="737" height="458" alt="image" src="https://github.com/user-attachments/assets/93be7679-8951-4cd1-b74e-b6cad2c18cdb" />
 
+## Final Assessment
 
+This lab demonstrated how a publicly exposed EC2 instance with an
+over-permissioned IAM role can lead to full AWS account visibility
+via instance metadata credential theft.
+
+Remediation steps eliminated the attack surface by enforcing IMDSv2,
+removing IAM role exposure, and restricting network access.
+
+This mirrors real-world cloud breaches caused by IAM misconfiguration
+rather than software vulnerabilities.
 
 
