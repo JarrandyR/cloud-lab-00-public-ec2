@@ -19,3 +19,10 @@ The goal is to understand how attack surface is introduced as infrastructure bec
 
 This design intentionally introduces a public network boundary for analysis.
 
+## Remediated Architecture
+
+The final architecture removes direct public exposure, enforces
+IMDSv2 protections, applies least-privilege IAM, and restricts
+administrative access.
+
+Attack paths demonstrated earlier are no longer viable.
