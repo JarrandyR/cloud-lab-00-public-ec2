@@ -9,3 +9,13 @@ This lab deploys a minimal AWS environment consisting of:
 - Security group–based network controls
 
 The goal is to understand how attack surface is introduced as infrastructure becomes reachable.
+
+## Network Design
+
+- VPC CIDR: 10.0.0.0/16
+- Public Subnet: 10.0.1.0/24
+- Internet Gateway attached
+- Default route (0.0.0.0/0) enabled
+
+This design intentionally introduces a public network boundary for analysis.
+
