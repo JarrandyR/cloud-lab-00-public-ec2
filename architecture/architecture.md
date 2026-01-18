@@ -49,28 +49,7 @@ Clear remediation point
 Conceptual Diagram (Simple + Correct)
 
 
-┌─────────────────────────────────────────────┐
-│                   Internet                  │
-└──────────────────────┬──────────────────────┘
-                       │
-               ┌───────▼────────┐
-               │ Internet Gateway│
-               └───────┬────────┘
-                       │
-        ┌──────────────▼──────────────┐
-        │            VPC               │
-        │        (10.0.0.0/16)          │
-        │                               │
-        │   ┌──────────────────────┐   │
-        │   │   Public Subnet       │   │
-        │   │   (10.0.1.0/24)       │   │
-        │   │                      │   │
-        │   │  EC2 Instance        │◄───┼── SSH (22)
-        │   │  + Public IP         │   │
-        │   │  + IAM Role          │   │
-        │   └─────────┬────────────┘   │
-        │             │                │
-        │     Instance Metadata         │
-        │     (IMDS → Credentials)     │
-        └─────────────┴────────────────┘
+
+<img width="370" height="479" alt="image" src="https://github.com/user-attachments/assets/40b0dd4c-52c2-4d8a-8728-fddb3f61fe47" />
+
 
