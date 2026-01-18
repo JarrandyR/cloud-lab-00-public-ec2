@@ -26,3 +26,51 @@ IMDSv2 protections, applies least-privilege IAM, and restricts
 administrative access.
 
 Attack paths demonstrated earlier are no longer viable.
+
+Cloud-Lab-00 Architecture (What We’re Showing)
+
+This lab is about one core mistake and its impact.
+So the architecture should reflect clarity, not complexity.
+
+Architecture Logic
+
+One VPC
+
+One public subnet
+
+One internet-facing EC2
+
+One IAM role (intentionally risky)
+
+Clear attack path
+
+Clear remediation point
+
+Conceptual Diagram (Simple + Correct)
+
+
+┌─────────────────────────────────────────────┐
+│                   Internet                  │
+└──────────────────────┬──────────────────────┘
+                       │
+               ┌───────▼────────┐
+               │ Internet Gateway│
+               └───────┬────────┘
+                       │
+        ┌──────────────▼──────────────┐
+        │            VPC               │
+        │        (10.0.0.0/16)          │
+        │                               │
+        │   ┌──────────────────────┐   │
+        │   │   Public Subnet       │   │
+        │   │   (10.0.1.0/24)       │   │
+        │   │                      │   │
+        │   │  EC2 Instance        │◄───┼── SSH (22)
+        │   │  + Public IP         │   │
+        │   │  + IAM Role          │   │
+        │   └─────────┬────────────┘   │
+        │             │                │
+        │     Instance Metadata         │
+        │     (IMDS → Credentials)     │
+        └─────────────┴────────────────┘
+
